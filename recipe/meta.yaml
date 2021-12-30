@@ -1,5 +1,5 @@
 {% set name = "karawun" %}
-{% set version = "0.2.5.3" %}
+{% set version = "0.2.5.4" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/karawun-{{ version }}.tar.gz
-  sha256: 2e12897b4314e695c908e406ad954a3c3f0417769ac4c627a6827a77c59e28c0
+  sha256: 0321538e614dcef8a54b36cd4cbb71b5b44434c039236cfc7c1f5bb6e166b4c9
 
 build:
   number: 0
