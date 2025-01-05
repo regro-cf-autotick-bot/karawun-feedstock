@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/karawun-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/karawun-{{ version }}.tar.gz
   sha256: 0321538e614dcef8a54b36cd4cbb71b5b44434c039236cfc7c1f5bb6e166b4c9
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - importTractography = karawun.commandline:import_tractography_cl
@@ -20,11 +20,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6,<=3.9
+    - python {{ python_min }}
   run:
     - numpy >=1.13.0
     - pydicom ==1.4.2
-    - python >=3.6,<=3.9
+    - python >={{ python_min }},<3.10a0
     - simpleitk >=1.2.0,<=2.0.2
 
 test:
@@ -35,6 +35,7 @@ test:
     - importTractography --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/karawun/
